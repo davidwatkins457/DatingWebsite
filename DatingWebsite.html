@@ -1,27 +1,56 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
+
     <title>Dating Website</title>
 
+    <link rel="stylesheet" type="text/css" href="Dating%20Website%20CSS.css">
+
+    <script rel="script" type="text/javascript" src="DatingWebsite.js"></script>
+
+    <style>article,aside,figure,footer,header,hgroup,menu,nav,section {display:block;}
+
+    </style>
+    <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css"
+
+          rel="stylesheet" type="text/css" />
+
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+
 </head>
+
 <body>
-<h1>Find Your Match</h1>
+
+<h1>Please Enter Your Details For Our Dating Website!</h1>
+
 <!---#1--->
+
 <fieldset>
+
     <legend>Your Face</legend>
-<label for="avatar">Your Image:</label>
-  <input
-            type="file"
 
-            id="avatar"
+<label for="avatar" class="class">Your Image:</label>
 
-            name="avatar"
+    <input id=avatar type='file' onchange="readURL(this);" />
 
-     required>
     <br>
-    <label for="preview">Image Preview:</label>
-    <img id="preview" name="preview">
+    <label for="blah">Image Preview:</label>
+ <!-- <input type="file"
+
+         id="avatar"
+
+         name="avatar"
+required>-->
+
+
+
+    <img id="blah" src="#" alt="your image" />
 
 
 </fieldset>
@@ -30,43 +59,40 @@
 
     <legend>Your general details</legend>
 
-<label for="Name">Name</label>
+<label for="Name" class="class">Name</label>
 
     <input type="text" id="Name" required>
 
     <br>
 
-<label>Gender</label>
+<label class="gender">Gender</label>
 
-    <label for="Male">Male</label>
 
-    <input type="radio" id="Male"required>
+    <input type="radio" id="Male" class="contactinfo"required>Male
 
-<label for="Female">Female</label>
-
-    <input type="radio" id="Female" required>
+    <input type="radio" id="Female" class="contactinfo"required>Female
 
 <br>
 
-    <label for="Age">Age</label>
+    <label for="Age" class="class">Age</label>
 
     <input type="number" id="Age" required>
 
 <br>
 
-    <label for="DOB">Date of Birth</label>
+    <label for="DOB" class="class">Date of Birth</label>
 
     <input type="date" id="DOB">
 
+    <br>
+
+   <label for="favcolor" class="class">Favorite Color</label>
+
+    <input type="color" id="favcolor">
+
 <br>
 
-   <label for="color">Favorite Color</label>
-
-    <input type="color" id="Color">
-
-<br>
-
-    <label for="Country">Which Country</label>
+    <label for="Country" class="class">Which Country</label>
 
 <select id="Country">
 
@@ -92,16 +118,14 @@
 
     <legend>Your Indicators</legend>
 
-    <label for="Height">Height:</label>
+    <label for="Height" class="class">Height:</label>
 
-    Short<input type="range" min="0" max="100" id="Height"> Tall
-
+&nbsp;<h4>Short</h4> <input type="range" min="0" max="100" id="Height">&nbsp; <h4>  Tall    </h4>
 <br>
 
-    <label for="salary">Salary:</label>
+    <label for="salary" class="class">Salary:</label>
 
-    Poor<input type="range" min="0" max="100" id="Salary"> Rich
-
+   &nbsp;<h4>Poor  </h4>&nbsp; <input type="range" min="0" max="100" id="Salary"> <h4>Rich</h4>
 </fieldset>
 
 <!---#4--->
@@ -110,34 +134,53 @@
 
     <legend>Your Contact Information</legend>
 
-    <label for="email">Email:</label>
+    <label for="email" class="class">Email:</label>
 
-    <input type="email" id="email" required>
-
-    <br>
-
-    <label for="tel">Mobile:</label>
-
-    <input type="tel" id="tel">
+    <input type="email" id="email" name="email" required>
 
     <br>
 
-    <label for="Address">Address:</label>
+    <label for="tel" class="class">Mobile:</label>
 
-    <textarea name="Address" id="Address"></textarea>
+    <input type="tel" id="tel" name="tel">
 
     <br>
 
-    <label for="Contactinfo">Method to contact you:</label>
+    <label for="Address" class="class">Address:</label>
 
-<input type="checkbox" id="Contactinfo"> Email
+    <textarea name="Address" id="Address" class="Address"></textarea>
 
-<input type="checkbox"> Whatsapp
+    <br>
 
-<input type="checkbox">In-app chat
+    <label for="Contactinfo" class="contactinfo">Method to contact you:</label>
+
+<input type="checkbox" id="Contactinfo" name="Contactinfo"> Email
+
+<input type="checkbox" name="Whatsapp"> Whatsapp
+
+<input type="checkbox" name="In-appchat">In-app chat
+
 </fieldset>
+
 <input type="submit">
 
+<script type="text/javascript">
+
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $('#blah')
+                        .attr('src', e.target.result)
+                        .width(150)
+                        .height(200);
+            };
+            reader.readAsDataURL(input.files[0]);
+        }
+
+    }
+
+    </script>
 </body>
 
 </html>
